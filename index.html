@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos y Exámenes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>Cursos y Exámenes</h1>
+        <input type="text" id="search" placeholder="Buscar cursos..." onkeyup="filterCourses()">
+    </header>
+    <main>
+        <section id="cursos" class="courses">
+        </section>
+    </main>
+    <footer id="contacto">
+        <p>&copy; 2025 Cursos y Exámenes. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        async function cargarCursos() {
+            try {
+                const response = await fetch('./cursos.json');
+                const cursos = await response.json();
+                const contenedor = document.getElementById("cursos");
+                contenedor.innerHTML = "";
+    
+                cursos.forEach(curso => {
+                    let card = document.createElement("div");
+                    card.classList.add("course-card");
+                    card.onclick = () => goToExam(curso.url);
+                    card.innerHTML = `<h2>${curso.titulo}</h2><p>${curso.descripcion}</p>`;
+                    contenedor.appendChild(card);
+                });
+            } catch (error) {
+                console.error("Error al cargar los cursos:", error);
+            }
+        }
+    
+        function goToExam(url) {
+            window.location.href = url;
+        }
+    
+        function filterCourses() {
+            let input = document.getElementById("search").value.toLowerCase();
+            document.querySelectorAll(".course-card").forEach(course => {
+                let text = course.innerText.toLowerCase();
+                course.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    
+        document.addEventListener("DOMContentLoaded", cargarCursos);
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: radial-gradient(circle, #1e3c72, #2a5298);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 1.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        header {
+            padding: 60px 20px 20px;
+            font-size: 24px;
+        }
+        #search {
+            padding: 10px;
+            width: 50%;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+        .courses {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+        }
+        .course-card {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            width: 200px;
+        }
+        .course-card:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</body>
+</html>
