@@ -3,138 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cursos y Exámenes</title>
+    <title>Cursos y Exámenes — Certifícate más rápido</title>
+    <meta name="description" content="Galería profesional de exámenes y cursos resueltos. Encuentra el examen que necesitas y certifícate más rápido con contenido actualizado.">
+    <meta name="theme-color" content="#070b18">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#cursos">Cursos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-inner">
+            <a href="#inicio" class="logo">
+                <span class="logo-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 10v6"/></svg>
+                </span>
+                <span>Exámenes<span class="gradient-text">Pro</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#cursos">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </nav>
-    <header>
-        <h1>Cursos y Exámenes</h1>
-        <input type="text" id="search" placeholder="Buscar cursos..." onkeyup="filterCourses()">
+
+    <header class="hero" id="inicio">
+        <span class="orb orb-1" aria-hidden="true"></span>
+        <span class="orb orb-2" aria-hidden="true"></span>
+        <span class="orb orb-3" aria-hidden="true"></span>
+        <div class="hero-inner">
+            <span class="badge">Exámenes resueltos y actualizados</span>
+            <h1>Cursos y <span class="gradient-text">exámenes</span> para certificarte más rápido</h1>
+            <p class="lead">Deja de perder tiempo buscando. Encuentra el examen resuelto que necesitas y obtén tu certificación hoy mismo.</p>
+            <div class="search-box">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+                <input type="text" id="search" placeholder="Buscar curso o examen (ej. Cypress, Java, SQL...)" autocomplete="off" onkeyup="filterCourses()">
+            </div>
+            <div class="stats">
+                <div class="stat"><strong id="statTotal">—</strong><span>Exámenes resueltos</span></div>
+                <div class="stat"><strong id="statAreas">—</strong><span>Áreas temáticas</span></div>
+                <div class="stat"><strong>2025</strong><span>Actualizados</span></div>
+            </div>
+        </div>
     </header>
+
     <main>
-        <section id="cursos" class="courses">
+        <section class="section" id="cursos">
+            <div class="section-head reveal">
+                <span class="section-tag">Catálogo</span>
+                <h2>Explora la <span class="gradient-text">galería de exámenes</span></h2>
+                <p>Haz clic en cualquier tarjeta para abrir el examen resuelto.</p>
+            </div>
+            <div class="courses-grid" id="cursos-grid"></div>
+            <p class="empty" id="empty" hidden>No se encontraron resultados para tu búsqueda.</p>
         </section>
     </main>
+
     <footer id="contacto">
-        <p>&copy; 2025 Cursos y Exámenes. Todos los derechos reservados.</p>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#inicio" class="logo">
+                    <span class="logo-mark" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 10v6"/></svg>
+                    </span>
+                    <span>Exámenes<span class="gradient-text">Pro</span></span>
+                </a>
+                <p>Biblioteca profesional de exámenes y cursos resueltos para que certifiques tus conocimientos sin perder tiempo.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#cursos">Catálogo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Recursos</h4>
+                <ul>
+                    <li><a href="#cursos">Todos los exámenes</a></li>
+                    <li><a href="#cursos">¿Cómo funciona?</a></li>
+                    <li><a href="#contacto">Soporte</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>&copy; 2025 Cursos y Exámenes. Todos los derechos reservados.</span>
+            <span>Hecho con dedicación para estudiantes.</span>
+        </div>
     </footer>
+
+    <button class="to-top" id="toTop" aria-label="Volver arriba">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+    </button>
+
     <script>
-        async function cargarCursos() {
-            try {
-                const response = await fetch('./cursos.json');
-                const cursos = await response.json();
-                const contenedor = document.getElementById("cursos");
-                contenedor.innerHTML = "";
-    
-                cursos.forEach(curso => {
-                    let card = document.createElement("div");
-                    card.classList.add("course-card");
-                    card.onclick = () => goToExam(curso.url);
-                    card.innerHTML = `<h2>${curso.titulo}</h2><p>${curso.descripcion}</p>`;
-                    contenedor.appendChild(card);
-                });
-            } catch (error) {
-                console.error("Error al cargar los cursos:", error);
+        const searchInput = document.getElementById('search');
+        const grid = document.getElementById('cursos-grid');
+
+        const ICONS = {
+            cap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"/><path d="M22 10v6"/></svg>',
+            robot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="2"/><path d="M12 8V4"/><circle cx="12" cy="2" r="1"/><path d="M9 14h.01"/><path d="M15 14h.01"/><circle cx="12" cy="14" r="3.2"/></svg>',
+            beaker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v5.5L4.5 18a2 2 0 0 0 1.8 3h11.4a2 2 0 0 0 1.8-3L14 8.5V3"/><path d="M7 15h10"/></svg>',
+            shield: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5.2-3.4 8.6-8 10-4.6-1.4-8-4.8-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>',
+            server: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01"/><path d="M6 17.5h.01"/><path d="M10 6.5h8"/><path d="M10 17.5h8"/></svg>',
+            code: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>',
+            chart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l3-4 3 3 4-6"/></svg>',
+            rocket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>',
+            globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
+        };
+
+        const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>';
+
+        const CATEGORIES = [
+            { tag: 'Automatización', icon: 'robot', c1: '#6366f1', c2: '#22d3ee', keys: ['puppeteer', 'playwright'] },
+            { tag: 'QA · E2E', icon: 'beaker', c1: '#a855f7', c2: '#f472b6', keys: ['cypress'] },
+            { tag: 'Frontend', icon: 'code', c1: '#f59e0b', c2: '#ef4444', keys: ['angular', 'html', 'css'] },
+            { tag: 'Backend', icon: 'server', c1: '#34d399', c2: '#22d3ee', keys: ['java', 'spring', 'fastapi', 'apis'] },
+            { tag: 'Bases de Datos', icon: 'chart', c1: '#22d3ee', c2: '#6366f1', keys: ['sql', 'postgresql'] },
+            { tag: 'Datos · BI', icon: 'chart', c1: '#38bdf8', c2: '#a855f7', keys: ['powerbi', 'ética', 'data science', 'inteligencia artificial'] },
+            { tag: 'Ciberseguridad', icon: 'shield', c1: '#f43f5e', c2: '#f97316', keys: ['hacking', 'ciberseguridad', 'seguridad', 'owasp', 'auth0', 'iso 27001', 'inteligencia para la ciberseguridad'] },
+            { tag: 'Agile · Scrum', icon: 'rocket', c1: '#8b5cf6', c2: '#ec4899', keys: ['scrum'] },
+            { tag: 'Idiomas', icon: 'globe', c1: '#34d399', c2: '#22d3ee', keys: ['inglés', 'ingles'] },
+            { tag: 'QA · Testing', icon: 'beaker', c1: '#f472b6', c2: '#fbbf24', keys: ['pruebas', 'test'] },
+            { tag: 'Automatización', icon: 'robot', c1: '#6366f1', c2: '#22d3ee', keys: ['automatizaci'] }
+        ];
+
+        const DEFAULT_CAT = { tag: 'Curso', icon: 'cap', c1: '#6366f1', c2: '#a855f7', keys: [] };
+
+        function categorize(title) {
+            const t = title.toLowerCase();
+            for (const cat of CATEGORIES) {
+                if (cat.keys.some(k => t.includes(k))) return cat;
             }
+            return DEFAULT_CAT;
         }
-    
+
         function goToExam(url) {
             window.location.href = url;
         }
-    
-        function filterCourses() {
-            let input = document.getElementById("search").value.toLowerCase();
-            document.querySelectorAll(".course-card").forEach(course => {
-                let text = course.innerText.toLowerCase();
-                course.style.display = text.includes(input) ? "block" : "none";
+
+        function buildCard(curso, index) {
+            const cat = categorize(curso.titulo);
+            const card = document.createElement('article');
+            card.className = 'course-card reveal';
+            card.dataset.search = `${curso.titulo} ${curso.descripcion} ${cat.tag}`.toLowerCase();
+            card.style.setProperty('--c1', cat.c1);
+            card.style.setProperty('--c2', cat.c2);
+            card.style.setProperty('--d', `${Math.min(index % 12, 6) * 60}ms`);
+            card.setAttribute('role', 'button');
+            card.setAttribute('tabindex', '0');
+            card.setAttribute('aria-label', `Abrir ${curso.titulo}`);
+            card.innerHTML = `
+                <span class="card-top">
+                    <span class="card-icon">${ICONS[cat.icon]}</span>
+                    <span class="card-tag">${cat.tag}</span>
+                </span>
+                <h3>${curso.titulo}</h3>
+                <p>${curso.descripcion}</p>
+                <span class="card-footer">
+                    <span class="card-cta">Ver examen ${ARROW}</span>
+                </span>`;
+            const open = () => goToExam(curso.url);
+            card.addEventListener('click', open);
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    open();
+                }
             });
+            return card;
         }
-    
-        document.addEventListener("DOMContentLoaded", cargarCursos);
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        function watchReveals(root) {
+            (root || document).querySelectorAll('.reveal:not(.visible)').forEach(el => revealObserver.observe(el));
+        }
+
+        function filterCourses() {
+            const q = searchInput.value.trim().toLowerCase();
+            let visible = 0;
+            grid.querySelectorAll('.course-card').forEach(card => {
+                if (card._timer) {
+                    clearTimeout(card._timer);
+                    card._timer = null;
+                }
+                const match = !q || card.dataset.search.includes(q);
+                const hidden = card.classList.contains('is-hidden');
+                if (!match && !hidden) {
+                    card.classList.add('is-hiding');
+                    card._timer = setTimeout(() => card.classList.add('is-hidden'), 280);
+                } else if (match) {
+                    if (hidden) {
+                        card.classList.remove('is-hidden');
+                        requestAnimationFrame(() => requestAnimationFrame(() => card.classList.remove('is-hiding')));
+                    } else if (card.classList.contains('is-hiding')) {
+                        card.classList.remove('is-hiding');
+                    }
+                    visible++;
+                }
+            });
+            document.getElementById('empty').hidden = visible !== 0;
+        }
+
+        const FALLBACK_CURSOS = [
+    {
+      "titulo": "Curso Avanzado de Automatización de Pruebas con Puppeteer (2)",
+      "descripcion": "Curso Avanzado de Automatización de Pruebas con Puppeteer (2)",
+      "url": "https://ouo.io/Z4FkFM"
+    },
+	{
+      "titulo": "Curso Avanzado de Automatización de Pruebas con Puppeteer (3)",
+      "descripcion": "Curso Avanzado de Automatización de Pruebas con Puppeteer (3)",
+      "url": "https://ouo.io/K9pSDr"
+    },
+	{
+      "titulo": "Curso Avanzado de Automatización de Pruebas con Puppeteer (4)",
+      "descripcion": "Curso Avanzado de Automatización de Pruebas con Puppeteer (4)",
+      "url": "https://ouo.io/Zzcph7c"
+    },
+	{
+      "titulo": "Curso Avanzado de Automatización de Pruebas con Puppeteer",
+      "descripcion": "Curso Avanzado de Automatización de Pruebas con Puppeteer",
+      "url": "https://ouo.io/Yt8Bj1"
+    },
+	{
+      "titulo": "Curso de Auth0 Implementación de Autenticación y Seguridad Web",
+      "descripcion": "Curso de Auth0 Implementación de Autenticación y Seguridad Web",
+      "url": "https://ouo.io/fgolNL"
+    },
+	{
+      "titulo": "Curso de Automatización de Pruebas con Puppeteer",
+      "descripcion": "Curso de Automatización de Pruebas con Puppeteer",
+      "url": "https://ouo.io/Pn9lIaf"
+    },
+	{
+      "titulo": "Curso de Automatización de Pruebas de Backend con Cypress",
+      "descripcion": "Curso de Automatización de Pruebas de Backend con Cypress",
+      "url": "https://ouo.io/UuMYBI2"
+    },
+	{
+      "titulo": "Curso de Automatización de Pruebas UI con Cypress (2)",
+      "descripcion": "Curso de Automatización de Pruebas UI con Cypress (2)",
+      "url": "https://ouo.io/CzsVf9"
+    },
+	{
+      "titulo": "Curso de Automatización de Pruebas UI con Cypress",
+      "descripcion": "Curso de Automatización de Pruebas UI con Cypress",
+      "url": "https://ouo.io/gALT10"
+    },
+	{
+      "titulo": "Curso de Automatización de Test con Playwright (2)",
+      "descripcion": "Curso de Automatización de Test con Playwright (2)",
+      "url": "https://ouo.io/md8eNu"
+    },
+	{
+      "titulo": "Curso de Automatización de Test con Playwright",
+      "descripcion": "Curso de Automatización de Test con Playwright",
+      "url": "https://ouo.io/ifkIjD"
+    },
+	{
+      "titulo": "Curso de Ciberseguridad para Desarrollo Web",
+      "descripcion": "Curso de Ciberseguridad para Desarrollo Web",
+      "url": "https://ouo.io/2APLPR"
+    },
+	{
+      "titulo": "Curso de Ciberseguridad y Privacidad para Empresas",
+      "descripcion": "Curso de Ciberseguridad y Privacidad para Empresas",
+      "url": "https://ouo.io/f1512Q"
+    },
+	{
+      "titulo": "Curso de Consumo de APIs REST con Angular",
+      "descripcion": "Curso de Consumo de APIs REST con Angular",
+      "url": "https://ouo.io/5jjpcy"
+    },
+	{
+      "titulo": "Curso de Cypress Avanzado",
+      "descripcion": "Curso de Cypress Avanzado",
+      "url": "https://ouo.io/lwZo3P"
+    },
+	{
+      "titulo": "Curso de Ética y Manejo de Datos para Data Science e Inteligencia Artificial",
+      "descripcion": "Curso de Ética y Manejo de Datos para Data Science e Inteligencia Artificial",
+      "url": "https://ouo.io/4HE7nu"
+    },
+	{
+      "titulo": "Curso de FastAPI Base de Datos, Modularización y Deploy a Producción",
+      "descripcion": "Curso de FastAPI Base de Datos, Modularización y Deploy a Producción",
+      "url": "https://ouo.io/bMqzMdh"
+    },
+	{
+      "titulo": "Curso de Fundamentos de Pruebas de Software",
+      "descripcion": "Curso de Fundamentos de Pruebas de Software",
+      "url": "https://ouo.io/6xFngE"
+    },
+	{
+      "titulo": "Curso de Hacking Escalada de Privilegios",
+      "descripcion": "Curso de Hacking Escalada de Privilegios",
+      "url": "https://ouo.io/6e34uJ8"
+    },
+	{
+      "titulo": "Curso de Hacking Servicios de Red",
+      "descripcion": "Curso de Hacking Servicios de Red",
+      "url": "https://ouo.io/WxtotS"
+    },
+	{
+      "titulo": "Curso de Historias de Usuario en Scrum",
+      "descripcion": "Curso de Historias de Usuario en Scrum",
+      "url": "https://ouo.io/7j5MqHr"
+    },
+	{
+      "titulo": "Curso de Inglés Básico A1 para Principiantes",
+      "descripcion": "Curso de Inglés Básico A1 para Principiantes",
+      "url": "https://ouo.io/249oJD"
+    },
+	{
+      "titulo": "Curso de Inteligencia para la Ciberseguridad",
+      "descripcion": "Curso de Inteligencia para la Ciberseguridad",
+      "url": "https://ouo.io/2i2sHW2"
+    },
+	{
+      "titulo": "Curso de Introducción a la Automatización de Pruebas",
+      "descripcion": "Curso de Introducción a la Automatización de Pruebas",
+      "url": "https://ouo.io/d9YCytP"
+    },
+	{
+      "titulo": "Curso de Java SE Orientado a Objetos",
+      "descripcion": "Curso de Java SE Orientado a Objetos",
+      "url": "https://ouo.io/LId93rz"
+    },
+	{
+      "titulo": "Curso de Java SE SQL y Bases de Datos",
+      "descripcion": "Curso de Java SE SQL y Bases de Datos",
+      "url": "https://ouo.io/u5ER7T"
+    },
+	{
+      "titulo": "Curso de Java Spring Data JPA Bases de Datos",
+      "descripcion": "Curso de Java Spring Data JPA Bases de Datos",
+      "url": "https://ouo.io/S3hzJP"
+    },
+	{
+      "titulo": "Curso de Java Spring",
+      "descripcion": "Curso de Java Spring",
+      "url": "https://ouo.io/924Vua"
+    },
+	{
+      "titulo": "Curso de OWASP Top 10 Riesgos en Aplicaciones",
+      "descripcion": "Curso de OWASP Top 10 Riesgos en Aplicaciones",
+      "url": "https://ouo.io/X8V6xF"
+    },
+	{
+      "titulo": "Curso de PostgreSQL",
+      "descripcion": "Curso de PostgreSQL",
+      "url": "https://ouo.io/uvmpPq"
+    },
+	{
+      "titulo": "Curso de Preparación para la Certificación en la Norma ISO 27001",
+      "descripcion": "Curso de Preparación para la Certificación en la Norma ISO 27001",
+      "url": "https://ouo.io/dj3Vzy"
+    },
+	{
+      "titulo": "Curso de Pruebas de Usabilidad",
+      "descripcion": "Curso de Pruebas de Usabilidad",
+      "url": "https://ouo.io/j21vpq2"
+    },
+	{
+      "titulo": "Curso de Pruebas Unitarias en Angular",
+      "descripcion": "Curso de Pruebas Unitarias en Angular",
+      "url": "https://ouo.io/cLVOLy"
+    },
+	{
+      "titulo": "Curso de Scrum Master",
+      "descripcion": "Curso de Scrum Master",
+      "url": "https://ouo.io/LGIEXPu"
+    },
+	{
+      "titulo": "Curso de Seguridad Informática para Equipos Técnicos",
+      "descripcion": "Curso de Seguridad Informática para Equipos Técnicos",
+      "url": "https://ouo.io/xS18wL"
+    },
+	{
+      "titulo": "Curso Definitivo de HTML y CSS",
+      "descripcion": "Curso Definitivo de HTML y CSS",
+      "url": "https://ouo.io/3yzv2d"
+    },
+	{
+      "titulo": "Curso PowerBI Avanzado",
+      "descripcion": "Curso PowerBI Avanzado",
+      "url": "https://ouo.io/85uCCq"
+    },
+	{
+      "titulo": "Curso Práctico de HTML y CSS",
+      "descripcion": "Curso Práctico de HTML y CSS",
+      "url": "https://ouo.io/dj34UE"
+    },
+	{
+      "titulo": "Curso Práctico de SQL",
+      "descripcion": "Curso Práctico de SQL",
+      "url": "https://ouo.io/LJ9cED"
+    },
+    {
+      "titulo": "Curso Profesional de Scrum",
+      "descripcion": "Curso Profesional de Scrum",
+      "url": "https://ouo.io/yBXufZg"
+    }
+];
+
+        async function cargarCursos() {
+            let cursos;
+            try {
+                const response = await fetch('./cursos.json');
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+                cursos = await response.json();
+            } catch (error) {
+                console.warn('Usando datos locales (no se pudo leer cursos.json):', error);
+                cursos = FALLBACK_CURSOS;
+            }
+            cursos.forEach((curso, i) => grid.appendChild(buildCard(curso, i)));
+            document.getElementById('statTotal').textContent = cursos.length;
+            document.getElementById('statAreas').textContent = new Set(cursos.map(c => categorize(c.titulo).tag)).size;
+            watchReveals(grid);
+        }
+
+        grid.addEventListener('mousemove', e => {
+            const card = e.target.closest('.course-card');
+            if (!card) return;
+            const r = card.getBoundingClientRect();
+            card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+            card.style.setProperty('--my', `${e.clientY - r.top}px`);
+        });
+
+        const navbar = document.getElementById('navbar');
+        const toTop = document.getElementById('toTop');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 30);
+            toTop.classList.toggle('show', window.scrollY > 500);
+        }, { passive: true });
+
+        toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
+        hamburger.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            hamburger.setAttribute('aria-expanded', open);
+        });
+        navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        }));
+
+        document.addEventListener('DOMContentLoaded', () => {
+            cargarCursos();
+            watchReveals();
+        });
     </script>
-    
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: radial-gradient(circle, #1e3c72, #2a5298);
-            color: white;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            animation: fadeIn 1.5s ease-in;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        nav {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        header {
-            padding: 60px 20px 20px;
-            font-size: 24px;
-        }
-        #search {
-            padding: 10px;
-            width: 50%;
-            margin-top: 10px;
-            border-radius: 5px;
-            border: none;
-        }
-        .courses {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            padding: 20px;
-        }
-        .course-card {
-            background: white;
-            color: black;
-            padding: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            width: 200px;
-        }
-        .course-card:hover {
-            transform: scale(1.1);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-        }
-        footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            margin-top: 20px;
-        }
-    </style>
 </body>
 </html>
